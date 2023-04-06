@@ -1,0 +1,156 @@
+* {margin: 0; padding: 0}
+
+body {
+    background-color: black;
+}
+
+.space {
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    background-image: url("images/space.png");
+    display: flex;
+    align-items: flex-end;
+    gap: 10%;
+}
+
+.planet-area {
+    display: flex;
+    width: 40%;
+    position: relative;
+}
+
+.planet {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.rocket {
+    display: flex;
+    width: 200px;
+    position: absolute;
+    bottom: 51%;
+    left: 50%;
+    rotate: 25deg;
+    z-index: 0;
+}
+
+.control-panel {
+    align-self: center;
+    padding: 15px;
+    background-color: yellow; /* For browsers that do not support gradients */
+    background-image: repeating-linear-gradient(45deg, black 0px, black 10px,
+    black 10px, yellow 10px, yellow 20px);
+}
+
+.control-panel__inner {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    row-gap: 20px;
+    background-color: #2a2a2a;
+    padding: 15px 0;
+    border-radius: 5px;
+}
+
+
+#password {
+    grid-area: 1 / 1 / span 1 / span 1;
+    justify-self: self-end;
+    margin-right: 5px;
+    font-size: 20px;
+    background-color: #2a2a2a;
+    border: solid 2px yellow;
+    color: yellow;
+    outline: none;
+}
+
+#password:hover {
+    cursor: pointer;
+}
+
+#password:focus::placeholder {
+    color: transparent;
+}
+
+#ok-button {
+    grid-area: 1 / 2 / span 1 / span 1;
+    justify-self: self-start;
+    width: 40px;
+    font-size: 15px;
+    background-color: yellow;
+    color: #2a2a2a;
+}
+
+#ok-button:hover {
+    cursor: pointer;
+}
+
+#ok-button:active {
+    border: solid 3px black;
+}
+
+.check-buttons {
+    display: flex;
+    grid-area: 2 / 1 / span 1 / span 2;
+}
+
+.check-buttons input {
+    width: 55px;
+    height: 20px;
+}
+
+.check-buttons input:hover {
+    cursor: pointer;
+}
+
+.levers input {
+    width: 80px;
+    height: 90px;
+    -webkit-appearance: slider-vertical;
+}
+
+.levers input:hover {
+    cursor: pointer;
+}
+
+.levers {
+    grid-area: 3 / 1 / span 1 / span 2;
+    display: flex;
+}
+
+
+.inactive-launch-button {
+    width: 70px;
+    height: 45px;
+    grid-area: 4 / 1 / span 1 / span 2;
+    font-size: 20px;
+    background-color: #363636;
+    color: white;
+    border-radius: 50%;
+}
+
+.active-launch-button {
+    background-color: red;
+}
+
+#launch-button:hover {
+    cursor: pointer;
+}
+
+#launch-button:active {
+    border-color: white;
+}
+
+@keyframes launch {
+    100% {
+        left: calc(50% + 300px);
+        bottom: calc(51% + 600px);
+    }
+}
+
+.move {
+    animation: launch 3s forwards;
+}
